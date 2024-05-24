@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+# Welcome to my notes
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This is for me only go away.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<iframe width="1093" height="615" src="https://www.youtube.com/embed/929Pa-lE1hA?list=RD929Pa-lE1hA" title="**NEW** Mario Dancing Type Beat (Trap Remix)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
