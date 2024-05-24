@@ -1,1 +1,8 @@
 site_name: Aebel's Notes
+theme:
+  name: 'material'
+  palette:
+    primary: black
+  logo: assets/icon.png
+  favicon: assets/icon.png
+

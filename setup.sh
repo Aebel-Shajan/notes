@@ -3,6 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+
 # Define the name of the virtual environment directory
 VENV_DIR=".venv"
 
@@ -32,9 +33,11 @@ setup_env() {
     fi
 
     echo "Installing mkdocs package..."
-    pip install mkdocs
+    pip install mkdocs-material
 
     echo "mkdocs has been installed."
+    
+    set +e
 }
 
 # Main script execution
