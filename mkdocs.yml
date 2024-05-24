@@ -5,4 +5,5 @@ theme:
     primary: black
   logo: assets/icon.png
   favicon: assets/icon.png
+extra_css: [assets/extra.css]
 
