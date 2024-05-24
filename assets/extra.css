@@ -1,0 +1,11 @@
+body {
+    background: url(./background.png);
+    background-repeat: no-repeat;
+
+}
+
+
+.md-nav__title {
+    background: transparent !important; 
+    box-shadow: none !important;
+}
