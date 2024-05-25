@@ -1,11 +1,16 @@
 body {
-    background: url(./background.png);
+    /* background: url(./background.png); */
     background-repeat: no-repeat;
-
+    background-attachment: fixed;
 }
 
 
 .md-nav__title {
     background: transparent !important; 
     box-shadow: none !important;
+}
+
+article {
+    background-color: #ffffff9b;
+    padding: 1rem;
 }
