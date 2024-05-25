@@ -13,6 +13,8 @@
 * salamendar inverse kinematics
 
 * habit tracker
+
+* chatgpt chat scroll minimap chrome extension
  
 
 ## Past
