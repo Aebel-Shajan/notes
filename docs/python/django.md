@@ -11,6 +11,32 @@
 * You can use shortcuts from django.shortcuts to cut down on code that gets repeated across multiple projects.
 * You can use generic views to replace writing out views in full by hand.
 
+## Creating Django projects
+1. Create the project directory
+```python
+mkdir tutorial
+cd tutorial
+```
+
+2. Create a virtual environment to isolate our package dependencies locally
+```python
+python3 -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+```
+
+3. Install Django and Django REST framework into the virtual environment
+```python
+pip install django
+pip install djangorestframework
+```
+
+4. Set up a new project with a single application
+```python
+django-admin startproject tutorial .  # Note the trailing '.' character
+cd tutorial
+django-admin startapp quickstart
+```
+
 ## Making model changes
 1. Change your models (in models.py).
 2. `python manage.py makemigrations` to create migrations for those changes
@@ -32,3 +58,6 @@ from .models import Choice, Question
 admin.site.register(Question)
 admin.site.register(Choice)
 ```
+
+# Django REST framework
+
