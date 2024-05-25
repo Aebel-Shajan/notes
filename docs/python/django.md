@@ -19,3 +19,16 @@
 ## Runserver 
 
 `python manage.py runserver`
+
+## Admin
+
+* `python manage.py createsuperuser` to create admin account
+
+* Add models to admin panel by using `admin.site.register`:
+```py title=polls/admin.py
+from django.contrib import admin
+from .models import Choice, Question
+
+admin.site.register(Question)
+admin.site.register(Choice)
+```
