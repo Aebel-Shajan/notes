@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../projects/">
+        <link rel="prev" href="../../javascript/scroll-minimap-for-chatgpt/">
       
       
         <link rel="next" href="../general/">
@@ -236,6 +236,69 @@
       
   
   
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Javascript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Javascript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/scroll-minimap-for-chatgpt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scroll minimap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -248,10 +311,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -262,8 +325,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Python
           </label>
@@ -331,6 +394,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-django-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Django projects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#making-model-changes" class="md-nav__link">
     <span class="md-ellipsis">
       Making model changes
@@ -343,6 +415,15 @@
   <a href="#runserver" class="md-nav__link">
     <span class="md-ellipsis">
       Runserver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin
     </span>
   </a>
   
@@ -442,6 +523,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-django-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Django projects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#making-model-changes" class="md-nav__link">
     <span class="md-ellipsis">
       Making model changes
@@ -454,6 +544,15 @@
   <a href="#runserver" class="md-nav__link">
     <span class="md-ellipsis">
       Runserver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin
     </span>
   </a>
   
@@ -485,6 +584,34 @@
 <li>You can use shortcuts from django.shortcuts to cut down on code that gets repeated across multiple projects.</li>
 <li>You can use generic views to replace writing out views in full by hand.</li>
 </ul>
+<h2 id="creating-django-projects">Creating Django projects</h2>
+<ol>
+<li>
+<p>Create the project directory
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">mkdir</span> <span class="n">tutorial</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">cd</span> <span class="n">tutorial</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Create a virtual environment to isolate our package dependencies locally
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>  <span class="c1"># On Windows use `env\Scripts\activate`</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Install Django and Django REST framework into the virtual environment
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">djangorestframework</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Set up a new project with a single application
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">tutorial</span> <span class="o">.</span>  <span class="c1"># Note the trailing &#39;.&#39; character</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">cd</span> <span class="n">tutorial</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startapp</span> <span class="n">quickstart</span>
+</span></code></pre></div></p>
+</li>
+</ol>
 <h2 id="making-model-changes">Making model changes</h2>
 <ol>
 <li>Change your models (in models.py).</li>
@@ -493,6 +620,22 @@
 </ol>
 <h2 id="runserver">Runserver</h2>
 <p><code>python manage.py runserver</code></p>
+<h2 id="admin">Admin</h2>
+<ul>
+<li>
+<p><code>python manage.py createsuperuser</code> to create admin account</p>
+</li>
+<li>
+<p>Add models to admin panel by using <code>admin.site.register</code>:
+```py title=polls/admin.py
+from django.contrib import admin
+from .models import Choice, Question</p>
+</li>
+</ul>
+<p>admin.site.register(Question)
+admin.site.register(Choice)
+```</p>
+<h1 id="django-rest-framework">Django REST framework</h1>
 
 
 
