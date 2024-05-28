@@ -8,7 +8,7 @@
 
 I made this extension because I kept getting lost during my conversations with chatgpt. Sometimes chatgpt be giving you alot of useless info you didnt ask for. Navigating through what it says and finding the useful bits can be pretty tedious. This extension aims to solve that.
 
-Me trying to find that one prompt on how to commit fraud in chatgpt:
+Me trying to find that one prompt on in chatgpt:
 ![](https://media1.tenor.com/m/_usq5_8FwooAAAAd/moon-knight.gif)
 
 ## Usage
@@ -26,37 +26,37 @@ Me trying to find that one prompt on how to commit fraud in chatgpt:
 
 ## Issues
 
-Report issues here https://github.com/Aebel-Shajan/scroll-minimap-for-chatgpt/issues
+Report issues here [https://github.com/Aebel-Shajan/scroll-minimap-for-chatgpt/issues](https://github.com/Aebel-Shajan/scroll-minimap-for-chatgpt/issues)
 
 * The scaling of the conversation to the minimap is not always one to one. This can lead to the scrollbar not syncing correctly.
 
 
 
 
-# Working out 
+## Working out 
 
-## Existing/similar chrome extensions
+### Existing/similar chrome extensions
 
-* https://github.com/Brian-Gaffney/Chrome-minimap (does not work)
+* [https://github.com/Brian-Gaffney/Chrome-minimap](https://github.com/Brian-Gaffney/Chrome-minimap) (does not work)
 
-* https://github.com/chintown/monocle (works but not for chatgpt chat)
+* [https://github.com/chintown/monocle](https://github.com/chintown/monocle) (works but not for chatgpt chat)
 
 
 Useful libraries:
 
-* https://html2canvas.hertzen.com/documentation.html
+* [https://html2canvas.hertzen.com/documentation.html](https://html2canvas.hertzen.com/documentation.html)
 
 These other extensions are really cool but I found that they did not work with chatgpt. At first I tried to copy the projects and change them for chatgpt. But there was alot going on and I could not understand the logic. 
 
 Also I looked into using react to make this but that was too complicated and would take ages to get set up. I ended up just having all the logic in one file `content.js` with around 160 lines of code.
 
-## Wireframe
+### Wireframe
 
 ![](../assets/chrome-extensions/chatgpt-scroll-wireframe.png)
 
 
 
-## Why the minimap doesnt work for chatgpt
+### Why the minimap doesnt work for chatgpt
 Setting `sourceScrollContainer=document.body` and `sourceElements=document.body.childNodes` does not work.
 
 ![](../assets/chrome-extensions/first-attempt.png)
@@ -103,7 +103,7 @@ function getSourceScrollContainer() {
 ![](../assets/chrome-extensions/second-attempt.png)
 
 
-## Scroll bar
+### Scroll bar
 
 **Aim**: Get a blue rectangle overlay to appear over the minimap which shows the current location in the chat.
 
@@ -135,7 +135,7 @@ function updateScrollBar() {
 
 (*issue with this: the text in the chat wraps differently based on how wide the minimap is. If the source elements are narrow, the target elements still remain at a fixed width of 100px.)
 
-## Automatic scrolling of minimap
+### Automatic scrolling of minimap
 
 **Aims**: 
 * We want the minimap to automatically scroll as the user scrolls through the chat. i.e. Find the value for minimap.scrollTop. 
@@ -190,7 +190,7 @@ function updateMinimapScroll() {
 ```
 
 
-## Click and drag the scroll bar
+### Click and drag the scroll bar
 I did this but I don't remember how I did it, or why it even works. 
 
 ```javascript
@@ -204,7 +204,7 @@ function handleScrollBarMove(mousePos) {
 }
 ```
 
-## Highlight user prompts
+### Highlight user prompts
 
 **Aim**: Make the user prompts stand out in the minimap
 
@@ -221,7 +221,7 @@ function colorUserChat() {
 ```
 
 
-# Future additions
+## Future additions
 
 * Add text input so users can select their own sourceElements using selectors.
 
