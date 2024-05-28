@@ -20,7 +20,7 @@
     
     
       
-        <title>Scroll minimap - Aebel's Notes</title>
+        <title>Scroll Minimap for Chatgpt - Aebel's Notes</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scroll-minimap" class="md-skip">
+        <a href="#scroll-minimap-for-chatgpt" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scroll minimap
+              Scroll Minimap for Chatgpt
             
           </span>
         </div>
@@ -289,7 +289,7 @@
           
   
   <span class="md-ellipsis">
-    Scroll minimap
+    Scroll Minimap for Chatgpt
   </span>
   
 
@@ -300,7 +300,7 @@
         
   
   <span class="md-ellipsis">
-    Scroll minimap
+    Scroll Minimap for Chatgpt
   </span>
   
 
@@ -322,9 +322,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scroll-bar" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Scroll bar
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues
     </span>
   </a>
   
@@ -478,9 +487,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scroll-bar" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Scroll bar
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues
     </span>
   </a>
   
@@ -501,8 +519,34 @@
                   
 
 
-<h1 id="scroll-minimap">Scroll minimap</h1>
-<p>Existing/similar chrome extensions:</p>
+<h1 id="scroll-minimap-for-chatgpt">Scroll Minimap for Chatgpt</h1>
+<p><strong>project timeline</strong>: 25th May - 28th May</p>
+<p><img alt="" src="../../assets/chrome-extensions/chatgpt-scroll-promo.png" /></p>
+<p>I made this extension because I kept getting lost during my conversations with chatgpt. Sometimes chatgpt be giving you alot of useless info you didnt ask for. Navigating through what it says and finding the useful bits can be pretty tedious. This extension aims to solve that.</p>
+<p>Me trying to find that one prompt on how to commit fraud in chatgpt:
+<img alt="" src="https://media1.tenor.com/m/_usq5_8FwooAAAAd/moon-knight.gif" /></p>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>
+<p>Download the extension from [insert chrome web store link here]</p>
+</li>
+<li>
+<p>Restart chrome </p>
+</li>
+<li>
+<p>Go to chatgpt, you should see a toggle button for the minimap in the top right corner. Open the minimap by pressing this button.</p>
+</li>
+<li>
+<p>Ask chatgpt a message and hit refresh minimap. A condensed view of the conversation should be shown in the minimap.</p>
+</li>
+</ol>
+<h2 id="issues">Issues</h2>
+<p>Report issues here https://github.com/Aebel-Shajan/scroll-minimap-for-chatgpt/issues</p>
+<ul>
+<li>The scaling of the conversation to the minimap is not always one to one. This can lead to the scrollbar not syncing correctly.</li>
+</ul>
+<h1 id="working-out">Working out</h1>
+<h2 id="existingsimilar-chrome-extensions">Existing/similar chrome extensions</h2>
 <ul>
 <li>
 <p>https://github.com/Brian-Gaffney/Chrome-minimap (does not work)</p>
@@ -513,29 +557,136 @@
 </ul>
 <p>Useful libraries:</p>
 <ul>
-<li>
-<p>https://html2canvas.hertzen.com/documentation.html</p>
-</li>
-<li>
-<p>html2canvas too difficult to implement :p copy html directly into minimap</p>
-</li>
+<li>https://html2canvas.hertzen.com/documentation.html</li>
 </ul>
-<p>Steps Taken: 
-* When you scroll on chatgpt.com, you are not scrolling the whole page but instead scrolling through a div. Copying over the websites full html will not work</p>
+<p>These other extensions are really cool but I found that they did not work with chatgpt. At first I tried to copy the projects and change them for chatgpt. But there was alot going on and I could not understand the logic. </p>
+<p>Also I looked into using react to make this but that was too complicated and would take ages to get set up. I ended up just having all the logic in one file <code>content.js</code> with around 160 lines of code.</p>
+<h2 id="wireframe">Wireframe</h2>
+<p><img alt="" src="../../assets/chrome-extensions/chatgpt-scroll-wireframe.png" /></p>
+<h2 id="why-the-minimap-doesnt-work-for-chatgpt">Why the minimap doesnt work for chatgpt</h2>
+<p>Setting <code>sourceScrollContainer=document.body</code> and <code>sourceElements=document.body.childNodes</code> does not work.</p>
 <p><img alt="" src="../../assets/chrome-extensions/first-attempt.png" /></p>
-<ul>
-<li>Instead copy over the container containing just the chatmessages.
-Do this by using the selector <code>'[data-testid^="conversation-turn-"]'</code> to target chatmessages and then call <code>.parentNode</code>:</li>
-</ul>
-<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">sourceElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;[data-testid^=&quot;conversation-turn-&quot;]&#39;</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">.</span><span class="nx">parentNode</span>
+<p>Instead use this selector <code>'[data-testid^="conversation-turn-"]'</code> to target chatmessages and then call <code>.parentNode</code> to get the <code>sourceElements</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Functions</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getSourceElements</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// cant directly target due to uniquely identified class names</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="c1">// so gotta hack it</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nx">sourceElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;[data-testid^=&quot;conversation-turn-&quot;]&#39;</span><span class="p">).</span><span class="nx">parentNode</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nx">sourceElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceElements</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">extensionContainer</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="nx">sourceElements</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">extensionContainer</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
 </span></code></pre></div>
-<img alt="" src="../../assets/chrome-extensions/second-attempt.png" /></p>
-<ul>
-<li>Now we should add a blue rectangle overlay which shows where we currently are</li>
-</ul>
+<p>We can't target the element for <code>sourceScrollContainer</code> which handles user scrolling of elements due to uuid class name.</p>
+<p><img alt="" src="../../assets/chrome-extensions/chatgpt-scroll-uuid-problem.png" /></p>
+<p>Easier to use <code>sourceElements</code> and call <code>.parentNode</code> till we get it.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getSourceScrollContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="c1">// Used to retrieve information about scroll position</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nx">sourceScrollContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceElements</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nx">sourceScrollContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceElements</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">extensionContainer</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nx">sourceElements</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">extensionContainer</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><img alt="" src="../../assets/chrome-extensions/second-attempt.png" /></p>
 <h2 id="scroll-bar">Scroll bar</h2>
+<p><strong>Aim</strong>: Get a blue rectangle overlay to appear over the minimap which shows the current location in the chat.</p>
+<p>In styles we set the scalling as 0.1. Therefore the targetElements are 0.1 times the sourceElements.</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">#</span><span class="nn">minimap</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">transform-origin</span><span class="p">:</span><span class="w"> </span><span class="kc">top</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><img alt="" src="../../assets/chrome-extensions/chatgpt-scroll-working-out1.png" /></p>
+<p>We want to find y (the top of the scroll bar from the top of the targetElements). </p>
+<p>y = 0.1 * v;</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">updateScrollBar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceScrollContainer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">scrollBarTop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceScrollContainer</span><span class="p">.</span><span class="nx">scrollTop</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nx">scrollBar</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">scrollBarTop</span><span class="si">}</span><span class="sb">px`</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>(*issue with this: the text in the chat wraps differently based on how wide the minimap is. If the source elements are narrow, the target elements still remain at a fixed width of 100px.)</p>
+<h2 id="automatic-scrolling-of-minimap">Automatic scrolling of minimap</h2>
+<p><strong>Aims</strong>: 
+* We want the minimap to automatically scroll as the user scrolls through the chat. i.e. Find the value for minimap.scrollTop. 
+* We also want to scroll such that
+    * when the user has scrolled to the top the scroll bar is shown in the top of the minimap
+    * when the user has scrolled to the middle the scroll bar is shown in the middle of the minimap</p>
+<p><img alt="" src="../../assets/chrome-extensions/chatgpt-scroll-working-out2.png" /></p>
+<p>From the diagram above we want to find the value for m_top. </p>
+<p>$$ 
+m_{top} = x - s_{rel}
+$$</p>
+<p>We know $x$ but not $s_{rel}$.</p>
+<p>The ratio between of $u$ and $v$ should be the same as the ratio between $s_{rel}$ and $m_{size}$:</p>
+<p>$$ 
+{ s_{rel} \over m_{size} } = { u \over v}
+$$</p>
+<p>$$
+s_{rel} = {m_{size} \times u \over v}
+$$</p>
+<p>Substitute value for $s_{rel}$ and remember that $x=0.1 \times u$:</p>
+<p>$$
+m_{top} = (0.1 \times u)  - {m_{size} \times u \over v}
+$$</p>
+<p>$$
+m_{top} = (0.1  - {m_{size}  \over v} ) \times u
+$$</p>
+<p>Putting this into code:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">updateMinimapScroll</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceScrollContainer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceScrollContainer</span><span class="p">.</span><span class="nx">scrollTop</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceScrollContainer</span><span class="p">.</span><span class="nx">scrollHeight</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">m_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">minimap</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="w"> </span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">minimapScrollTop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">0.1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="nx">m_size</span><span class="o">/</span><span class="nx">v</span><span class="p">))</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nx">minimap</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">minimapScrollTop</span><span class="p">);</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="click-and-drag-the-scroll-bar">Click and drag the scroll bar</h2>
+<p>I did this but I don't remember how I did it, or why it even works. </p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">handleScrollBarMove</span><span class="p">(</span><span class="nx">mousePos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceScrollContainer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceScrollContainer</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceElements</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scrollBar</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceScrollAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">mousePos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">minimap</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">minimap</span><span class="p">.</span><span class="nx">scrollTop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">offset</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">scale</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nx">sourceScrollContainer</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceScrollAmount</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="highlight-user-prompts">Highlight user prompts</h2>
+<p><strong>Aim</strong>: Make the user prompts stand out in the minimap</p>
+<p>I found out chat messages are the even indexed elements in targetElements. Then I changed the background color to blue.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">colorUserChat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">userChatElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">targetElements</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;[data-testid^=&quot;conversation-turn-&quot;]&#39;</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="c1">// odd indices are user chat messages. omg i am mega brain for figuring this out</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">index</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">            </span><span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;#00DFFF&#39;</span><span class="p">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h1 id="future-additions">Future additions</h1>
+<ul>
+<li>
+<p>Add text input so users can select their own sourceElements using selectors.</p>
+</li>
+<li>
+<p>Make it work on all websites not just chatgpt.</p>
+</li>
+</ul>
 
 
 
