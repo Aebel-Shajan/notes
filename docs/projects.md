@@ -2,9 +2,7 @@
 
 ## Future
 
-* vscode like minimap extension but for chrome
-
-* data dashboard from fitbit, strong, samsung fit, google fit
+* general purpose minimap for all websites
 
 * contents page for multiple documentation pages
 
@@ -13,11 +11,12 @@
 * salamendar inverse kinematics
 
 * habit tracker
-
-* chatgpt chat scroll minimap chrome extension
  
+* data dashboard from fitbit, strong, samsung fit, google fit
 
 ## Past
+
+* chatgpt chat scroll minimap chrome extension
 
 * java spring boot, react js chatroom application
 
@@ -31,7 +30,7 @@
 
 * c++ quantum circuit simulator
 
-## Limbo
+## In the void
 
 * three js + rapier js rocket league clone :(
 
