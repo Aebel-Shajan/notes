@@ -1,5 +1,8 @@
 # Gym Data Analysis
 
+**project timeline**: 5th June - dunno
+
+
 I want to gain more insight on my gym stats which I record using the Strong app. The strong app already provides some good graph visualisation, but its very simple and very specific. Also I figured this would be a good project to practice my data analysis skills with python. I might extend this project to also include my fitbit data. 
 
 I thought about doing this project in pyspark and sql. However, I figured I would be less likely to abandon, it if I just stuck to what I knew. So pandas, numpy, and seaborn it is.
@@ -21,7 +24,7 @@ Theres a lot of information you can extract from this csv file. Here's a couple 
 
 ## Working out
 
-## 1 Workout Heatmap
+### 1 Workout Heatmap
 
 Aim: Create an annual heatmap for workouts
 
