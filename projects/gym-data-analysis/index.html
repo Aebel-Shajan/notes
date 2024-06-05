@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../django/">
+        <link rel="prev" href="../0-projects/">
       
       
-        <link rel="next" href="../pyspark/">
+        <link rel="next" href="../habit-tracker/">
       
       
       <link rel="icon" href="../../assets/icon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>General - Aebel's Notes</title>
+        <title>Gym Data Analysis - Aebel's Notes</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gym-data-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General
+              Gym Data Analysis
             
           </span>
         </div>
@@ -274,17 +279,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -298,7 +305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Projects
@@ -312,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/0-projects/" class="md-nav__link">
+      <a href="../0-projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -330,10 +337,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../projects/gym-data-analysis/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Gym Data Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -342,6 +369,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data gathering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data visualisation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working out
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-workout-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Workout Heatmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roadblocks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -354,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/habit-tracker/" class="md-nav__link">
+      <a href="../habit-tracker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -375,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/scroll-minimap-for-chatgpt/" class="md-nav__link">
+      <a href="../scroll-minimap-for-chatgpt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -400,19 +492,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -426,7 +516,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -440,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../django/" class="md-nav__link">
+      <a href="../../python/django/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,17 +548,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../python/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -477,7 +560,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -490,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyspark/" class="md-nav__link">
+      <a href="../../python/pyspark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -528,6 +610,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data gathering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data visualisation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working out
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-workout-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Workout Heatmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadblocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roadblocks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -542,9 +679,84 @@
                   
 
 
-  <h1>General</h1>
-
-
+<h1 id="gym-data-analysis">Gym Data Analysis</h1>
+<p>I want to gain more insight on my gym stats which I record using the Strong app. The strong app already provides some good graph visualisation, but its very simple and very specific. Also I figured this would be a good project to practice my data analysis skills with python. I might extend this project to also include my fitbit data. </p>
+<p>I thought about doing this project in pyspark and sql. However, I figured I would be less likely to abandon, it if I just stuck to what I knew. So pandas, numpy, and seaborn it is.</p>
+<h2 id="data-gathering">Data gathering</h2>
+<p>The strong app does not have an api like fitbit does where I can regularly collect my information. Instead there is an option to manually extract your data in a csv format. </p>
+<h2 id="data-visualisation">Data visualisation</h2>
+<p>Theres a lot of information you can extract from this csv file. Here's a couple things I want to obtain:</p>
+<ul>
+<li>
+<p>Do like one of those github yearly calander frequency charts.</p>
+</li>
+<li>
+<p>Have a graph of how weekly gym frequency changes.</p>
+</li>
+<li>
+<p>Obtain like the average weight I lift per set of 7/8 reps</p>
+</li>
+</ul>
+<h2 id="working-out">Working out</h2>
+<h2 id="1-workout-heatmap">1 Workout Heatmap</h2>
+<p>Aim: Create an annual heatmap for workouts</p>
+<p>Objectives:</p>
+<ul>
+<li>
+<p>Read in data from csv, store as pandas df, print df to terminal.</p>
+</li>
+<li>
+<p>Group rows by date and workout</p>
+</li>
+<li>
+<p>Find a way to create a heatmap visual</p>
+</li>
+<li>
+<p>Quantify heat signatures based on workout duration and also maybe workout volume.</p>
+</li>
+</ul>
+<p>The data from the csv has the form:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Date;Workout Name;Exercise Name;Set Order;Weight;Weight Unit;Reps;RPE;Distance;Distance Unit;Seconds;Notes;Workout Notes;Workout Duration
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2023-07-30 16:49:28;&quot;Arms&quot;;&quot;Bench Press (Dumbbell)&quot;;1;14;kg;8;;;;0;&quot;&quot;;&quot;&quot;;44m
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2023-07-30 16:49:28;&quot;Arms&quot;;&quot;Bench Press (Dumbbell)&quot;;2;12;kg;8;;;;0;;;44m
+</span></code></pre></div>
+<p>Where each row contains info on an individual set. (Could transform this csv into multiple sql tables? 🤔 )</p>
+<p>We could group the rows in the csv by the date and workout name. Then use the duration for the workout to quantify the heat signature? (Could also use volume obtained by doing reps x weight [Weight Unit])</p>
+<p>I filtered the raw data such that only date, workout name and workout duration was left. Then I dropped the duplicates to get a df containing all workouts when they were completed and how long it took.</p>
+<p>Also when processing the data I had to apply <code>parse_duration</code> on the <code>Workout Duration</code> column. This was to convert from "<code>x</code>h <code>y</code>m" format to "60<code>x</code> + <code>y</code>" minutes float.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">workout_df</span> <span class="o">=</span> <span class="n">raw_df</span><span class="p">[[</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="s2">&quot;Workout Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Workout Duration&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">workout_df</span><span class="p">[</span><span class="s1">&#39;Workout Duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">workout_df</span><span class="p">[</span><span class="s1">&#39;Workout Duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">parse_duration</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p>I used the <a href="https://github.com/e-hulten/july/">july python package</a> to display the heatmap. </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>july.heatmap(
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    workout_df[&quot;Date&quot;], 
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    workout_df[&quot;Workout Duration&quot;]
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    )
+</span></code></pre></div>
+<p><img alt="workout heatmap" src="../../assets/gym-data-analysis/workout_heatmap.png" /></p>
+<p>To instead use the workout volume as the heat signature, I would have to do some more preprocessing on the raw data. </p>
+<h2 id="roadblocks">Roadblocks</h2>
+<ul>
+<li>
+<p>Issue:</p>
+<p>Had issues reading csv using:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;input_data&quot;</span><span class="p">])</span>
+</span></code></pre></div>
+The error was due to the csv data using the delimiter ";" instead of the normal ","</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Date;Workout Name;Exercise Name;Set Order;Weight;Weight Unit;Reps;RPE;Distance;Distance Unit;Seconds;Notes;Workout Notes;Workout Duration
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2023-07-30 16:49:28;&quot;Arms&quot;;&quot;Bench Press (Dumbbell)&quot;;1;14;kg;8;;;;0;&quot;&quot;;&quot;&quot;;44m
+</span></code></pre></div>
+<p>Solution:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;input_data&quot;</span><span class="p">],</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Issue:</p>
+<p>After installing the july package, I got an error to do with matplotlib being depracated. </p>
+<p>Solution:</p>
+<p>As a result I downgraded matplotlib to <code>matplotlib==3.4.3</code> instead of the latest version <code>matplotlib 3.9.0</code>. </p>
+</li>
+</ul>
 
 
 
