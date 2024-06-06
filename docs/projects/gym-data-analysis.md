@@ -80,7 +80,7 @@ I am most likely to go on wednesday lol.
 
 ![workout barplot](../assets/gym-data-analysis/workout_barplot.png)
 
-## 3 Workout Frequency (Weeks of the year)
+### 3 Workout Frequency (Weeks of the year)
 
 ![workout frequency](../assets/gym-data-analysis/weekly_workout_barplot.png)
 
