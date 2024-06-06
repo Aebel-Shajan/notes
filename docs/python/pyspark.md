@@ -1,7 +1,6 @@
 # Pyspark
 
-Following documentation from https://best-practice-and-impact.github.io/ons-spark/intro.html
-
+Following documentation from [Dap Cats pyspark intro](https://best-practice-and-impact.github.io/ons-spark/pyspark-intro/pyspark-intro.html)
 
 ## Overview
 
@@ -87,3 +86,17 @@ random_numbers.show()
 ## Introduction to Pyspark
 
 PySpark DataFrames are processed on the Spark cluster. This is a big pool of linked machines, called nodes. PySpark DataFrames are distributed into partitions, and are processed in parallel on the nodes in the Spark cluster. You can have much greater memory capacity with Spark and so is suitable for big data.
+
+
+functions | description 
+-|-
+`spark.read.csv()`, `spark.read.table()` | Read in data from csv or hive tables
+`.printSchema()` | Print schema
+`.show()` | Show first few rows of df to terminal
+`.toPandas()` | spark df to pandas df
+`.select()` | sql query to select columns
+`.count()` | counts rows
+`.drop()` | drop columns
+`.withColumnRenamed` | rename column
+`.filter()` | filter columns, use with `F.col()`
+
