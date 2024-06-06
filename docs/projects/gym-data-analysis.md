@@ -72,6 +72,18 @@ july.heatmap(
 
 To instead use the workout volume as the heat signature, I would have to do some more preprocessing on the raw data. 
 
+### 2 Workout Frequency (Days of the week)
+
+I can't lie I just asked chatgpt for this.
+
+I am most likely to go on wednesday lol.
+
+![workout barplot](../assets/gym-data-analysis/workout_barplot.png)
+
+## 3 Workout Frequency (Weeks of the year)
+
+![workout frequency](../assets/gym-data-analysis/weekly_workout_barplot.png)
+
 ## Roadblocks
 
 *   Issue:
