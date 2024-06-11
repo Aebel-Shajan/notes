@@ -6,13 +6,13 @@
 
 * contents page for multiple documentation pages
 
-## Present
-
-* salamendar inverse kinematics
-
 * habit tracker
+
+## Present
  
-* data dashboard from fitbit, strong, samsung fit, google fit
+* gym data analysis python project
+
+* strong data visualisation web app
 
 ## Past
 
@@ -35,3 +35,5 @@
 * three js + rapier js rocket league clone :(
 
 * job application chrome extension
+
+* salamendar inverse kinematics
