@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -142,7 +142,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -559,9 +559,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-df-manually" class="md-nav__link">
+  <a href="#creating-spark-dataframes" class="md-nav__link">
     <span class="md-ellipsis">
-      Create DF manually
+      Creating Spark Dataframes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick reference
     </span>
   </a>
   
@@ -573,9 +582,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-pyspark" class="md-nav__link">
+  <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction to Pyspark
+      Testing
     </span>
   </a>
   
@@ -652,9 +661,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-df-manually" class="md-nav__link">
+  <a href="#creating-spark-dataframes" class="md-nav__link">
     <span class="md-ellipsis">
-      Create DF manually
+      Creating Spark Dataframes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick reference
     </span>
   </a>
   
@@ -666,9 +684,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-pyspark" class="md-nav__link">
+  <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction to Pyspark
+      Testing
     </span>
   </a>
   
@@ -692,6 +710,7 @@
 <h1 id="pyspark">Pyspark</h1>
 <p>Following documentation from <a href="https://best-practice-and-impact.github.io/ons-spark/pyspark-intro/pyspark-intro.html">Dap Cats pyspark intro</a></p>
 <h2 id="overview">Overview</h2>
+<p>PySpark DataFrames are processed on the Spark cluster. This is a big pool of linked machines, called nodes. PySpark DataFrames are distributed into partitions, and are processed in parallel on the nodes in the Spark cluster. You can have much greater memory capacity with Spark and so is suitable for big data.</p>
 <h3 id="sessions">Sessions</h3>
 <ul>
 <li>Start a default session : <code>SparkSession.builder</code>/<code>spark_connect()</code></li>
@@ -760,22 +779,40 @@
 <p>Column methods <code>.cast()</code> or <code>.astype()</code> to change type of column</p>
 </li>
 </ul>
-<h3 id="create-df-manually">Create DF manually</h3>
+<h3 id="creating-spark-dataframes">Creating Spark Dataframes</h3>
+<p>Create spark session
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">spark</span> <span class="o">=</span> <span class="p">(</span><span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">master</span><span class="p">(</span><span class="s2">&quot;local[2]&quot;</span><span class="p">)</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>         <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;create-DFs&quot;</span><span class="p">)</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>         <span class="o">.</span><span class="n">getOrCreate</span><span class="p">())</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">seed_no</span> <span class="o">=</span> <span class="mi">100</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">random_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                  <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;rand_no&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">seed_no</span><span class="p">)))</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">random_numbers</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
-<h2 id="introduction-to-pyspark">Introduction to Pyspark</h2>
-<p>PySpark DataFrames are processed on the Spark cluster. This is a big pool of linked machines, called nodes. PySpark DataFrames are distributed into partitions, and are processed in parallel on the nodes in the Spark cluster. You can have much greater memory capacity with Spark and so is suitable for big data.</p>
+One column df
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">seed_no</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">random_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                  <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;rand_no&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">seed_no</span><span class="p">)))</span>
+</span></code></pre></div>
+From pandas df
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">winners_pd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="p">{</span><span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">2022</span><span class="p">)),</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>     <span class="s2">&quot;winner&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Minella Times&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Tiger Roll&quot;</span><span class="p">,</span> <span class="s2">&quot;Tiger Roll&quot;</span><span class="p">,</span> <span class="s2">&quot;One For Arthur&quot;</span><span class="p">],</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>     <span class="s2">&quot;starting_price&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;11/1&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;4/1 F&quot;</span><span class="p">,</span> <span class="s2">&quot;10/1&quot;</span><span class="p">,</span> <span class="s2">&quot;14/1&quot;</span><span class="p">],</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>     <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>     <span class="s2">&quot;jockey&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Rachael Blackmore&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Davy Russell&quot;</span><span class="p">,</span> <span class="s2">&quot;Davy Russell&quot;</span><span class="p">,</span> <span class="s2">&quot;Derek Fox&quot;</span><span class="p">]</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">})</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">winners_spark</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">winners_pd</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p>Manual creation of df
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">winners_spark</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="p">[</span><span class="mi">2021</span><span class="p">,</span> <span class="s2">&quot;Minella Times&quot;</span><span class="p">,</span> <span class="s2">&quot;11/1&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Rachael Blackmore&quot;</span><span class="p">],</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="p">[</span><span class="mi">2020</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">[</span><span class="mi">2019</span><span class="p">,</span> <span class="s2">&quot;Tiger Roll&quot;</span><span class="p">,</span> <span class="s2">&quot;4/1 F&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;Davy Russell&quot;</span><span class="p">],</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="p">[</span><span class="mi">2018</span><span class="p">,</span> <span class="s2">&quot;Tiger Roll&quot;</span><span class="p">,</span> <span class="s2">&quot;10/1&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Davy Russell&quot;</span><span class="p">],</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="p">[</span><span class="mi">2017</span><span class="p">,</span> <span class="s2">&quot;One For Arthur&quot;</span><span class="p">,</span> <span class="s2">&quot;14/1&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Derek Fox&quot;</span><span class="p">]],</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">schema</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;winner&quot;</span><span class="p">,</span> <span class="s2">&quot;starting_price&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="s2">&quot;jockey&quot;</span><span class="p">])</span>
+</span></code></pre></div></p>
+<h3 id="quick-reference">Quick reference</h3>
 <table>
 <thead>
 <tr>
@@ -813,7 +850,7 @@
 <td>drop columns</td>
 </tr>
 <tr>
-<td><code>.withColumnRenamed</code></td>
+<td><code>.withColumnRenamed()</code></td>
 <td>rename column</td>
 </tr>
 <tr>
@@ -822,6 +859,19 @@
 </tr>
 </tbody>
 </table>
+<h2 id="testing">Testing</h2>
+<p>When creating dataframes during testing, you need to reference a spark session. Instead of creating a new sparksession inside each function, create a fixture for it.</p>
+<div class="language-python highlight"><span class="filename">conftest.py</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">pytest</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">def</span> <span class="nf">spark_fixture</span><span class="p">():</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;Testing PySpark Example&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="k">yield</span> <span class="n">spark</span>
+</span></code></pre></div>
+<p>Use chispa library to check if 2 dfs are equal.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">chispa</span> <span class="kn">import</span> <span class="n">assert_df_equality</span>
+</span></code></pre></div></p>
 
 
 
@@ -871,7 +921,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="../../assets/mathjax.js"></script>
       
