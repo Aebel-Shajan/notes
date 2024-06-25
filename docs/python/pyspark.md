@@ -120,6 +120,7 @@ functions | description
 `.drop()` | drop columns
 `.withColumnRenamed()` | rename column
 `.filter()` | filter columns, use with `F.col()`
+`F.when(df.age > 3, 1).otherwise(0)` |  if else statement
 
 
 ## Testing 
