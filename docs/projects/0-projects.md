@@ -10,11 +10,13 @@
 
 ## Present
  
-* gym data analysis python project
+* Nemo movies spring boot, react project
 
-* strong data visualisation web app
+* Fitbit data analysis
 
 ## Past
+
+* gym data analysis python project
 
 * chatgpt chat scroll minimap chrome extension
 
