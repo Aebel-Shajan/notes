@@ -1,11 +1,11 @@
 # Pyspark Gym Data Pipeline
 
 # Stuff to learn:
-* Types of joins
-* Save Hive Tables
-* Learn SQL Syntax
-* Joins: Left, Inner, Anti-Join
-* Window vs GroupBy
+- [ ] Types of joins
+- [x] Save Hive Tables
+- [ ] Learn SQL Syntax
+- [ ] Joins: Left, Inner, Anti-Join
+- [ ] Window vs GroupBy
 
 # Issues:
 
@@ -20,7 +20,7 @@ Permission denied: user=shajaa, access=WRITE, inode="/user/hive/warehouse":hive:
 ```
 
 
-Solution:
+**Solution**:
 Modify the spark session builder to enable Hive.
 
 ```python
