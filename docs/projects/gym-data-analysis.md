@@ -2,7 +2,6 @@
 
 **project timeline**: 5th June - 25th June
 
-
 I want to gain more insight on my gym stats which I record using the Strong app. The strong app already provides some good graph visualisation, but its very simple and very specific. Also I figured this would be a good project to practice my data analysis skills with python. I might extend this project to also include my fitbit data. 
 
 I thought about doing this project in pyspark and sql. However, I figured I would be less likely to abandon, it if I just stuck to what I knew. So pandas, numpy, and seaborn it is.
@@ -83,6 +82,32 @@ I am most likely to go on wednesday lol.
 ### 3 Workout Frequency (Weeks of the year)
 
 ![workout frequency](../assets/gym-data-analysis/weekly_workout_barplot.png)
+
+
+### 4 Streamlit Web App
+Similar projects: 
+Project | github
+-|-
+[StatLift](https://statlift.streamlit.app/) | [Source](https://github.com/jjaju/statlift/blob/main/statlift.py)
+[strongappanalytics](https://strongappanalytics.web.app/) | [Source](https://github.com/AlexandrosKyriakakis/StrongAppAnalytics)
+
+Observations: 
+* Both projects provide good graphs but nothing on workout frequency or heatmaps.
+
+* [streamlit](https://streamlit.io/) provides an easy way to create a web app from python data
+
+* strongappanalytics uses javascript to process and visuallise the data on the client side. (But they also have a python script in the repo?) If I were to reuse python code from my previous project I would have to create a backend server and handle requsts there.
+
+* If i use stream lit to create the web app, deployment and frontend would be done for me. I would only have to work with python. 
+
+Plan: 
+* Clone statlift and build on top of it using streamlit.
+* Add the heatmaps and other graphs 
+
+Useful Links:
+* [https://discuss.streamlit.io/t/display-a-created-heatmap-on-my-web-app/40126](https://discuss.streamlit.io/t/display-a-created-heatmap-on-my-web-app/40126)
+
+* [statlift fork](https://github.com/Aebel-Shajan/statlift)
 
 ## Roadblocks
 
