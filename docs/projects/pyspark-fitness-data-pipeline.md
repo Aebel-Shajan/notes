@@ -1,4 +1,4 @@
-# Pyspark Gym Data Pipeline
+# Pyspark Fitness Data Pipeline
 
 # Stuff to learn:
 - [ ] Types of joins
