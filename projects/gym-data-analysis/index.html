@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0-projects/">
+        <link rel="prev" href="../fit-bit-data-analysis/">
       
       
-        <link rel="next" href="../scroll-minimap-for-chatgpt/">
+        <link rel="next" href="../pyspark-fitness-data-pipeline/">
       
       
       <link rel="icon" href="../../assets/icon.png">
@@ -337,6 +337,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../fit-bit-data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fitbit data analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -440,6 +461,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4-streamlit-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Streamlit Web App
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -470,11 +500,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../scroll-minimap-for-chatgpt/" class="md-nav__link">
+      <a href="../pyspark-fitness-data-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scroll Minimap for Chatgpt
+    Pyspark Fitness Data Pipeline
   </span>
   
 
@@ -491,11 +521,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../strong-data-web-app/" class="md-nav__link">
+      <a href="../scroll-minimap-for-chatgpt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Strong data web app
+    Scroll Minimap for Chatgpt
   </span>
   
 
@@ -698,6 +728,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4-streamlit-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Streamlit Web App
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -728,7 +767,7 @@
 
 
 <h1 id="gym-data-analysis">Gym Data Analysis</h1>
-<p><strong>project timeline</strong>: 5th June - dunno</p>
+<p><strong>project timeline</strong>: 5th June - 25th June</p>
 <p>I want to gain more insight on my gym stats which I record using the Strong app. The strong app already provides some good graph visualisation, but its very simple and very specific. Also I figured this would be a good project to practice my data analysis skills with python. I might extend this project to also include my fitbit data. </p>
 <p>I thought about doing this project in pyspark and sql. However, I figured I would be less likely to abandon, it if I just stuck to what I knew. So pandas, numpy, and seaborn it is.</p>
 <h2 id="data-gathering">Data gathering</h2>
@@ -790,6 +829,33 @@
 <p><img alt="workout barplot" src="../../assets/gym-data-analysis/workout_barplot.png" /></p>
 <h3 id="3-workout-frequency-weeks-of-the-year">3 Workout Frequency (Weeks of the year)</h3>
 <p><img alt="workout frequency" src="../../assets/gym-data-analysis/weekly_workout_barplot.png" /></p>
+<h3 id="4-streamlit-web-app">4 Streamlit Web App</h3>
+<p>Similar projects: 
+Project | github
+-|-
+<a href="https://statlift.streamlit.app/">StatLift</a> | <a href="https://github.com/jjaju/statlift/blob/main/statlift.py">Source</a>
+<a href="https://strongappanalytics.web.app/">strongappanalytics</a> | <a href="https://github.com/AlexandrosKyriakakis/StrongAppAnalytics">Source</a></p>
+<p>Observations: 
+* Both projects provide good graphs but nothing on workout frequency or heatmaps.</p>
+<ul>
+<li>
+<p><a href="https://streamlit.io/">streamlit</a> provides an easy way to create a web app from python data</p>
+</li>
+<li>
+<p>strongappanalytics uses javascript to process and visuallise the data on the client side. (But they also have a python script in the repo?) If I were to reuse python code from my previous project I would have to create a backend server and handle requsts there.</p>
+</li>
+<li>
+<p>If i use stream lit to create the web app, deployment and frontend would be done for me. I would only have to work with python. </p>
+</li>
+</ul>
+<p>Plan: 
+* Clone statlift and build on top of it using streamlit.
+* Add the heatmaps and other graphs </p>
+<p>Useful Links:
+* <a href="https://discuss.streamlit.io/t/display-a-created-heatmap-on-my-web-app/40126">https://discuss.streamlit.io/t/display-a-created-heatmap-on-my-web-app/40126</a></p>
+<ul>
+<li><a href="https://github.com/Aebel-Shajan/statlift">statlift fork</a></li>
+</ul>
 <h2 id="roadblocks">Roadblocks</h2>
 <ul>
 <li>
