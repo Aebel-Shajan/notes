@@ -111,3 +111,18 @@ Diagram:
 ### Improving ergonomics:
 * Use a shell function
 * Use alias
+
+## 5 Demo Web Application
+
+Minimal 3 Tier web app:
+* React frontend
+* Two Api implementations:
+    * node (interpreted)
+    * golang (compiled)
+* PostgreSQL Database
+
+Link: https://github.com/sidpalas/devops-directive-docker-course/tree/main/05-example-web-application
+
+key take away: Trying to run the apis and frontend without
+containers can be difficult. You have to check what version of node and go you have, what dependencies each api has etc..
+
