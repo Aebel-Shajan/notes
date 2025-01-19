@@ -54,7 +54,50 @@ docker run -it ubuntu:22.04
 docker ps -a
 ```
 
-* Docker doesnt remember installing after setting up container. Specify install as part 
-of docker image in dockerfile.
+* Docker doesnt remember installing packages after setting up container. Specify install as part of docker image in dockerfile.
 
-got upto: https://youtu.be/RqTEHSBrYFw?si=HKyCoKDiSb6aGvXI&t=3427
+
+* Docker images don't persist data:
+```bash
+➜  ~ docker run -it --rm ubuntu:22.04
+root@6d203c82bcaf:/# mkdir my-data
+root@6d203c82bcaf:/# echo "Hello from the container!" > /my-data/hello.txt
+root@6d203c82bcaf:/# cat my-data/hello.txt
+Hello from the container!
+root@6d203c82bcaf:/# exit
+exit
+➜  ~ docker run -it --rm ubuntu:22.04   
+root@ecb159d73754:/# cat my-data/hello.txt
+cat: my-data/hello.txt: No such file or directory
+```
+### Volume mounts
+
+Use volumes and mounts to safely persist the data.
+
+To create a volume: 
+```bash
+docker volume create my-volume
+```
+
+To mount volume `my-volume` to `my-data` folder in container:
+```bash
+docker run -it --rm --mount source=my-volume,destination=/my-data/ ubuntu:22.04 
+```
+
+This connects the folder my-data to the volume my-volume. Anything you save into my-data persists in my-volume. 
+
+So if you exit out the container and create a new one which also mounts to my-volume, the same files would be accessible.
+
+(Volumes lives on the virtual machine docker creates)
+
+### Bind mounts
+
+Binds a folder from host filesystem to a folder in the container
+
+```bash
+docker run  -it --rm --mount type=bind,source="${PWD}"/my-data,destination=/my-data ubuntu:22.04
+```
+
+Useful for easy visibility of data, but most times volume mounts are preffered.
+
+Got to here: https://youtu.be/RqTEHSBrYFw?t=3876
