@@ -100,4 +100,14 @@ docker run  -it --rm --mount type=bind,source="${PWD}"/my-data,destination=/my-d
 
 Useful for easy visibility of data, but most times volume mounts are preffered.
 
-Got to here: https://youtu.be/RqTEHSBrYFw?t=3876
+Diagram: 
+![mount diagrame](mounting-folders.png)
+
+### Use cases of 3rd party containers
+* Databases
+* Interactive test environments
+* CLI utilities
+
+### Improving ergonomics:
+* Use a shell function
+* Use alias
