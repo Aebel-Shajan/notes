@@ -126,3 +126,22 @@ Link: https://github.com/sidpalas/devops-directive-docker-course/tree/main/05-ex
 key take away: Trying to run the apis and frontend without
 containers can be difficult. You have to check what version of node and go you have, what dependencies each api has etc..
 
+This motivates the next section
+
+## 6 Building Container Images
+
+Link: https://github.com/sidpalas/devops-directive-docker-course/tree/main/06-building-container-images
+
+Dockerfile : A text document that contains all the commands user could call on the command line to assemble an image.
+
+dockerfile + build context + docker ignore = docker build
+
+Docs:  https://docs.docker.com/reference/dockerfile/
+
+* Have `Dockerfile` where the code lives.
+* `docker build .` in same dir to build docker image from DockerFile
+* `COPY . . ` in DockerFile to copy entire current working dir to image.
+* To clear docker cache: `docker system prune`
+* To name a docker image you built: `docker build -t api-node:0 . `
+* List all docker images `docker image list`
+* Avoid creating images from scratch (can lead to massive image sizes), use optimised versions from docker hub.
