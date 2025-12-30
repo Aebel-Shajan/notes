@@ -220,3 +220,40 @@ Takeaway
 * Adopt active learning strategies
 * Don’t assume that you’re doing something wrong if the learning feels hard. Remember that difficulties you can overcome with greater cognitive effort will more than repay you in the depth and durability of your learning.
 * Distill the underlying principles, build the structure
+
+## 7. Increase your abilities
+* Marshmallow study -> children who waited for 2 marshmallows were seen to be more successful later on in life.
+* Mnemonic can help increase memory
+
+Neuroplasticity
+* Number of synapsess peaks at age of one or two, plateus until puberty then decreases
+* The brain is mutable
+* The speed of our mental abilities is determined by the robustness of our mental connections
+* neurogenesis: hippocampus (where we consolidate learning and memory) is able to generate newer neurons later in life
+
+Is IQ mutable?
+* IQ has increased over time an IQ of 100 today is the same as an IQ of 116 60 years ago.
+* Different factors affect IQ: Nutrition, wealth, education
+
+Brain training
+* brain training games have not showed any real benefit. effects were called illusory by study trying to recreate it
+* Brain is not a muscle training one area does not strengthen others
+
+Growth mindset
+* "If you think you can, or you think you can't, you are right."
+* Those who interpret failure as the result of insufficient effort, dig deeper and try different aproaches compared to those who just give up.
+* Performance goals vs learning goals -> limited potential vs unlimited
+* Sucess is less dependent on IQ than on grit, curiosity and persistence
+
+Deliberate practice
+* 
+
+Memory Cues
+* Mnemonic device (e.g. ROY G BIV)
+* Memory palace 
+* The value of mnemonics to reaise intellectual abilites comes after mastery of new material
+
+The Takeaway
+* effortful learning changes the brain
+* intellectual abilities are not fixed from birth
+
