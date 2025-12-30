@@ -153,3 +153,70 @@ The Takeaway
 * Learning is a 3 step process: initial encoding into short term memory -> consolidated into long term memory -> Retrieval updates learning and enables you to apply when you need it
 * Recall learning from short term memory requires little mental effort
 
+## 5. Avoid the illusions of knowing
+* Metacognition: monitoring your own thinking
+* We can delude ourselves
+* 2008 robbers get shot by police for stealing of delivery drivers.
+
+The two systems of of knowing
+* system 1: reflexive
+* system 2: analytical
+* Story of chinese pilot flying over the pacific. Nearly crashed the plane because he trusted his system 1 way of thinking over what the flight instruments were saying.
+* Must cultivate a disciplined System 2 
+
+Illusions and memory distortions
+* Memory can be distorted in many ways
+* Imagination inflation
+* Suggestion -> like leading questions
+* Interference
+* Curse of knowledge: people tend underestimate how long it will take another person to learn something new or perform a task they have already mastered.
+* A lie told enough times can come to be accepted as truth
+* Fluency illusions
+
+Mental Models
+* We tend to bundle together the incremental steps that are required to solve different types of problems
+
+
+Unskilled and unaware of it
+
+
+Tools and habits for calibrating your judgement
+
+
+## 6. Get beyond learning styles
+* The idea the individuals have distinct learning styles is borderline untrue
+
+Active learning from the get go
+* People who as a matter of habit extract underlying principles or rules from new experiences are more successful learners than those who take their experiences at face value
+* Bruce Hendry's story -> self made man. Started and failed with real estate. Worked for Kodak as a salesman. Then went into investing salesman. Found companies going into bankruptcy, with assets greater than junior bonds issued. Bought them up and made a profit.
+* What you tell yourself about your ability plays a part in shaping the ways you learn
+
+Successful intelligence
+* 2 kinds of intelligence: 
+    * fluid - ability to reason, see relationships, think abstractly
+    * crystallized - ones accumulated knowledge of the world
+* IQ is not fixed from birth, it changes as you learn
+
+Dynamic testing
+* Dynamic testing helps us discover our weakness and correct them.
+* 3 steps:
+    * 1. test of some kind
+    * 2. I dedicate myself to becoming more competent
+    * 3. I test myself again, paying attento to what works
+
+Structure building
+* structure building: the act as we encounter new material, of extracting the salient ideas and constructing a coherent mental framework out of them. (mental models)
+* High structure builders learn new material better than low structure builders
+* Low structure builders have difficulty setting aside irrelavent information.
+
+Rule versus example learning
+* Rule learners identify the underlying principle that differentiate the examples
+* Example learners tend to memorize examples
+
+
+Takeaway
+* Be the one in charge
+* Embrace the notion of successful intelligence
+* Adopt active learning strategies
+* Don’t assume that you’re doing something wrong if the learning feels hard. Remember that difficulties you can overcome with greater cognitive effort will more than repay you in the depth and durability of your learning.
+* Distill the underlying principles, build the structure
