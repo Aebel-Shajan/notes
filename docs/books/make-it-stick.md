@@ -12,7 +12,7 @@ https://read.amazon.co.uk/?asin=B00JQ3FN7M&ref_=kwl_kr_iv_rec_1
 7. Increase Your Abilities 
 8. Make It Stick
 
-## 1. Learning is misunderstook
+## 1. Learning is misunderstood
 * pilot landing story => shows importance of understanding
 
 Some key points about learning:
@@ -105,3 +105,51 @@ The Takeaway
 * varied practice
 
 ## 4. Embrace difficulties
+* Mia Blundetto => marine scared of heights jumps from an airplane. Got caught in parachute of other jumper, but stayed calm.
+* Demonstrates how testing is a potent reality check on the accuracy of your own judgment of what you know how to do.
+
+How Learning Occurs
+* Encoding: process of converting sensory perceptions to meaningful representations in the brain
+* Consolidation: Process of strengthening these mental representations is called conosolidation
+* Retrieval
+
+Extended learning: updating retrieval case
+* Knowledge is more durable if its deeply entrenched, it has practical importance or keen emotional weight.
+* Use cues/context to retrieve
+
+Easier isn't better
+* Experiment where baseballers practiced hitting different types of balls. One did mass practice (1 type of throw then another), whilst the other did varied. 
+* Mass practice saw gratifying improvents at the start, but during play those who did varied practice saw more success.
+
+How effort helps
+* Reconsolidating memory: effortful recall of learning
+* Creating mental models: 
+* Broadening mastery
+* Fostering conceptual learning
+* Improving versatility
+* Priming the mind for learning
+
+Other learning strategies that incorporate desirable difficulties
+* when a font is blurry you remember better
+* when a course is in a different order to the textbook you remember better
+* Making the reader work harder to contruct an interpretation that makes sense improves learning
+* Generation: act of trying to answer a question or attempting to solve a problem rather than being presented the solution
+
+Failure and the myth of errorless learning
+* Retrieval from short term memory is an ineffective learning strategy
+* Errors are an integral part of increasing mastery
+* Fear of failure reduces test performance
+* A significant portion of your working memory goes into worrying about performance, if you have test anxiety
+
+An example of generative learning
+* Generative learning: The process of solving a problem without the benefit of how
+* Bonnie Blodgetts garden writing: "leap before you look", also be forgiving about errors made. Its part of the learning process
+
+Undesirable difficulties
+* Desirable difficulty is something that can be overcome with effort
+* Undesirable difficulty is something like reading in a book in Lithuanian without knowing the language
+
+The Takeaway
+* Learning is a 3 step process: initial encoding into short term memory -> consolidated into long term memory -> Retrieval updates learning and enables you to apply when you need it
+* Recall learning from short term memory requires little mental effort
+
