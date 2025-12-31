@@ -27,3 +27,23 @@ Scala recap
     * implicits do weird stuff. (compiler fills in arg for function when implicits around)
 
 
+Spark first principles
+* Replaced MapReduce
+* phase 1: simple functioning programming api
+* phase 2: interactive data science + spark shell + spark sql
+* phase 3: ml, streaming, graphx
+* The most popular data processing engine
+* spark is not concerned with data sources
+* spark is not part of hadoop
+
+
+## 1. Spark Strucutured API with DataFrames
+
+DataFrames Basics
+* use jdk 11, jdk 17 bugs out bruh
+* in practice don't use infer schema (dates can cause problems), define own schema
+* create spark sessions using `sparkSession.builder().appName().config().getOrCreate()` (pseudo)
+* use `import spark.implicits._` to make creating dfs easier
+
+DataFrames Basics: Exercises
+* 
