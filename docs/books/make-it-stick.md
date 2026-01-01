@@ -236,7 +236,7 @@ Is IQ mutable?
 * Different factors affect IQ: Nutrition, wealth, education
 
 Brain training
-* brain training games have not showed any real benefit. effects were called illusory by study trying to recreate it
+* brain training games have not showed any real benefit. effgiects were called illusory by study trying to recreate it
 * Brain is not a muscle training one area does not strengthen others
 
 Growth mindset
@@ -257,3 +257,20 @@ The Takeaway
 * effortful learning changes the brain
 * intellectual abilities are not fixed from birth
 
+## 8. Make it stick
+
+Learning Tips for students
+* Significant learning is often difficult
+* Practice retrieving new learning from memory (i.e. self quizzing)
+* After one or two reviews of a text, self-quizzing is far more potent for learning than additional rereading.
+* Space out your retrieval practice: leave considerable time between practice sessions
+* Interleave the study of different problem types
+* Michael Young
+* Timothy Fellows
+
+Tips for lifelong learners
+* Retrieval practice
+
+Tips for teachers
+
+Tips for trainers
