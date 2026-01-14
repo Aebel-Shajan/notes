@@ -123,3 +123,13 @@ Dataframe aggregations
 * can use `    .orderBy(col("average_rating").desc_nulls_last)` to order by descending
 * aggregations and grouping are examples of wide transformations => one or more to one or more partitions
 * shuffling is expensive, better to do groupings at the ending
+
+
+## 3. Spark Types and Datasets
+Working with Spark Types
+* pearson correlation coefficient `df.stat.corr`
+* capitalise: `initcap`, `lower`, `upper`
+* regex: `regexp_extract`, `regexp_replace`
+
+Advanced Spark Types
+
