@@ -133,3 +133,32 @@ Working with Spark Types
 
 Advanced Spark Types
 
+Managing Nulls in Data
+* `isNull`, 
+* `na.drop`, `na.fill`
+* `selectExpr("ifnull, nvl, nullif, nvl2")`
+
+Datasets
+* Typed dataframes: distributed collection of jvm objects instead of untyped rows.
+* useful when:
+    * want to maintain type information
+    * want clean concise code
+    * our filters/transformations are hard to express in DF or sql
+* avoid when:
+    * performance is critical: Spark can't optimize transformations
+* Why ? can treat it as collection, use `map, flatMap, fold, reduce, for comprehensions`
+1. define your case class
+2. read the df from the file
+3. define an encoder (importing the implicits)
+4. convert the Df to Ds
+
+* All DataFrames are Datasets with Type Row 🤯
+```
+type DataFrame = Dataset[Row]
+```
+
+Datasets part 2
+* join results in df, joinWith results in dataset.
+* `joinWith`
+* `def groupByKey[K: Encoder](func: T => K): KeyValueGroupedDataset[K, T]`
+
