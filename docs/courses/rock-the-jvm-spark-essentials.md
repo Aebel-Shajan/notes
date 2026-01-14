@@ -123,3 +123,7 @@ Dataframe aggregations
 * can use `    .orderBy(col("average_rating").desc_nulls_last)` to order by descending
 * aggregations and grouping are examples of wide transformations => one or more to one or more partitions
 * shuffling is expensive, better to do groupings at the ending
+
+DataFrame Joins
+* wide transformation (expensive) scans entire dataframe across entire cluster. involves shuffling
+* 
