@@ -145,3 +145,8 @@ Will the best in human nature please stand up
 * complex tasks does not need general intelligence. e.g. chess
 * automation all-around us
 * can have huge impacts when things go wrong (flash crash 2010)
+
+## 2. Paths to superintelligence 
+* whole brain evolution is slow, takes times.
+* limited by either scanning or computing power
+* lower limit 
