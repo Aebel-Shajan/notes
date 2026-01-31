@@ -8,8 +8,6 @@
 
 I made this extension because I kept getting lost during my conversations with chatgpt. Sometimes chatgpt be giving you alot of useless info you didnt ask for. Navigating through what it says and finding the useful bits can be pretty tedious. This extension aims to solve that.
 
-Me trying to find that one prompt on in chatgpt:
-![](https://media1.tenor.com/m/_usq5_8FwooAAAAd/moon-knight.gif)
 
 ## Usage
 
