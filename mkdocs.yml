@@ -1,14 +1,23 @@
 site_name: Aebel's Notes
 theme:
   name: 'material'
-  palette:
-    primary: black
   logo: assets/icon.png
   favicon: assets/icon.png
+  palette:
+    - scheme: default
+      primary: grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
   - content.code.copy
 extra_css: [assets/extra.css]
 markdown_extensions:
+  - tables
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span

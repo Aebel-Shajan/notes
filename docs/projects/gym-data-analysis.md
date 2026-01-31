@@ -85,11 +85,12 @@ I am most likely to go on wednesday lol.
 
 
 ### 4 Streamlit Web App
-Similar projects: 
-Project | github
--|-
-[StatLift](https://statlift.streamlit.app/) | [Source](https://github.com/jjaju/statlift/blob/main/statlift.py)
-[strongappanalytics](https://strongappanalytics.web.app/) | [Source](https://github.com/AlexandrosKyriakakis/StrongAppAnalytics)
+Similar projects:
+
+| Project                                                   | github                                                               |
+|-----------------------------------------------------------|----------------------------------------------------------------------|
+| [StatLift](https://statlift.streamlit.app/)               | [Source](https://github.com/jjaju/statlift/blob/main/statlift.py)    |
+| [strongappanalytics](https://strongappanalytics.web.app/) | [Source](https://github.com/AlexandrosKyriakakis/StrongAppAnalytics) |
 
 Observations: 
 * Both projects provide good graphs but nothing on workout frequency or heatmaps.
