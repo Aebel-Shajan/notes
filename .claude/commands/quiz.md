@@ -16,7 +16,7 @@ Generate an interactive quiz for a topic in this notes site.
    - Test real understanding, not trivia
    - Include tricky but fair distractors — wrong answers should be plausible
    - Cover a range of difficulty: some fundamentals, some intermediate, a couple that make you think
-   - Include a brief explanation after the answer options that teaches something, not just restates the answer
+   - Include a brief explanation separated by a `---` horizontal rule after the answer options/question. This content is hidden until the user submits their answer
 7. Write the quiz to `docs/quizzes/<topic>.md` (using the parsed topic name, without the trailing number) using the format below. Create the `docs/quizzes/` directory if it doesn't exist.
 
 ## Quiz file format
@@ -36,6 +36,8 @@ What does `terraform init` do?
 - [ ] Validates configuration files
 - [ ] Destroys all managed resources
 
+---
+
 `terraform init` sets up the working directory and downloads required provider plugins.
 </quiz>
 ```
@@ -54,6 +56,8 @@ Which of the following are valid Terraform block types? (Select all that apply)
 - [x] module
 - [ ] endpoint
 
+---
+
 `resource`, `data`, and `module` are valid Terraform block types. `service` and `endpoint` are not.
 </quiz>
 ```
@@ -65,6 +69,8 @@ Use double square brackets `[[answer]]` for fill-in-the-blank. Answers are case-
 ```markdown
 <quiz>
 The Terraform command to format your configuration files is `terraform [[fmt]]`.
+
+---
 
 `terraform fmt` auto-formats `.tf` files to a canonical style.
 </quiz>
