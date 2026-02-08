@@ -27,7 +27,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
-
+plugins:
+  - mkdocs_quiz
+  
 extra_javascript:
   - assets/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6

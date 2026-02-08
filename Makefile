@@ -19,7 +19,7 @@ venv:
 	@echo "  source .venv/bin/activate"
 
 install:
-	pip install mkdocs-material
+	@pip install mkdocs-material mkdocs-quiz
 
 build:
 	mkdocs build
