@@ -11,7 +11,7 @@ Generate an interactive quiz for a topic in this notes site.
 5. Use a **mix of question types**:
    - **Single correct answer** (radio buttons): 4 options, one marked `[x]`. Use for questions with one clear correct answer.
    - **Multiple correct answers** (checkboxes): 4-5 options, two or more marked `[x]`. Use for "select all that apply" style questions. Include at least 2-3 of these.
-   - **Fill in the blank** (text input): Use `[[answer]]` inline in the question text. Use for key terms, command names, or short factual answers. Include at least 2-3 of these.
+   - **Fill in the blank** (text input): Use [[answer]] inline in the question text. Use for key terms, command names, or short factual answers. Include at least 2-3 of these.
 6. Question quality guidelines:
    - Test real understanding, not trivia
    - Include tricky but fair distractors — wrong answers should be plausible
@@ -64,11 +64,11 @@ Which of the following are valid Terraform block types? (Select all that apply)
 
 ### Fill in the blank (text input)
 
-Use double square brackets `[[answer]]` for fill-in-the-blank. Answers are case-insensitive:
+Use double square brackets [[answer]] for fill-in-the-blank. Answers are case-insensitive:
 
 ```markdown
 <quiz>
-The Terraform command to format your configuration files is `terraform [[fmt]]`.
+The Terraform command to format your configuration files is terraform [[fmt]].
 
 ---
 

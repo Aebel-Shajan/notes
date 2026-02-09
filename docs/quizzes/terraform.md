@@ -3,251 +3,250 @@
 <quiz>
 What does `terraform init` do?
 
-- [ ] Validates your configuration syntax
-- [ ] Creates a new Terraform project from a template
-- [x] Initializes the working directory and downloads required providers/modules
-- [ ] Generates a plan of infrastructure changes
+- [ ] Creates cloud resources defined in your configuration
+- [x] Initializes the working directory and downloads required providers
+- [ ] Validates your configuration files for syntax errors
+- [ ] Generates an execution plan for review
 
 ---
 
-`terraform init` prepares the working directory by downloading provider plugins and modules specified in your configuration. It must be run before any other Terraform command in a new or cloned project.
+`terraform init` sets up the working directory, downloads provider plugins, and initializes the backend. It must be run before any other Terraform command in a new workspace.
 </quiz>
 
 <quiz>
-Which of the following are valid top-level Terraform block types? (Select all that apply)
+The Terraform command to auto-format your `.tf` files to canonical style is `terraform` [[fmt]].
+
+---
+
+`terraform fmt` rewrites Terraform configuration files to a consistent format and style. It's commonly run before committing code.
+</quiz>
+
+<quiz>
+Which of the following are valid Terraform block types? (Select all that apply)
 
 - [x] resource
 - [x] data
 - [ ] service
-- [x] variable
-- [x] output
+- [x] module
+- [ ] endpoint
 
 ---
 
-`resource`, `data`, `variable`, and `output` are all valid top-level block types. `service` is not a Terraform concept — it's commonly used in Docker Compose or Kubernetes, which can be a tempting distractor.
+`resource`, `data`, and `module` are all valid top-level Terraform block types. `service` and `endpoint` are not part of Terraform's language specification.
 </quiz>
 
 <quiz>
-The Terraform command to auto-format your `.tf` files is `terraform [[fmt]]`.
+What is the correct order of the core Terraform workflow?
+
+- [ ] plan → init → validate → apply → destroy
+- [ ] validate → plan → init → apply → destroy
+- [x] init → validate → plan → apply → destroy
+- [ ] init → plan → validate → apply → destroy
 
 ---
 
-`terraform fmt` rewrites Terraform configuration files to a canonical format and style. It's commonly run before committing code.
+The standard workflow is: `init` (set up workspace) → `validate` (check syntax) → `plan` (preview changes) → `apply` (create/update resources) → `destroy` (tear down resources).
 </quiz>
 
 <quiz>
-What is the purpose of a Terraform state file?
+In Terraform, how do you reference a variable named `instance_type` inside a configuration block?
 
-- [ ] It stores your provider credentials securely
-- [ ] It caches downloaded provider binaries
-- [x] It maps your configuration to real-world resources so Terraform can track what it manages
-- [ ] It logs the history of all `terraform apply` runs
+- [ ] `${instance_type}`
+- [x] `var.instance_type`
+- [ ] `variable.instance_type`
+- [ ] `tf.instance_type`
 
 ---
 
-The state file (`terraform.tfstate`) is Terraform's source of truth for what infrastructure it manages. It maps resource addresses in your config to actual resource IDs in your cloud provider, enabling Terraform to detect drift and plan changes.
+Variables are referenced using the `var.` prefix, e.g. `var.instance_type`. The `${...}` interpolation syntax is only needed inside quoted strings, and even then you'd write `"${var.instance_type}"`.
 </quiz>
 
 <quiz>
-You want to reference a variable named `region` inside a resource block. The correct syntax is `[[var.region]]`.
+What is the purpose of a `data` block in Terraform?
+
+- [ ] To define new infrastructure resources to create
+- [ ] To store output values for other modules
+- [x] To query existing resources or information from a provider
+- [ ] To declare input variables for the configuration
 
 ---
 
-Terraform variables are referenced using the `var.<name>` prefix. For example, `var.region` accesses the value of a variable block named `region`.
+A `data` block (data source) lets you fetch information about existing infrastructure or external data that Terraform doesn't manage, such as looking up an AMI ID or reading a DNS zone.
 </quiz>
 
 <quiz>
-What happens if you run `terraform apply` without first running `terraform plan`?
-
-- [ ] It fails with an error
-- [ ] It only validates the configuration
-- [x] It generates a plan and then prompts you to approve it before applying
-- [ ] It applies changes without any confirmation
+The file where you would conventionally store your variable declarations is called [[variables.tf]].
 
 ---
 
-Running `terraform apply` without a saved plan will automatically generate a new plan and present it for approval. Terraform always shows you what it intends to do before making changes (unless you pass `-auto-approve`).
+By convention, variable blocks are placed in `variables.tf`. While Terraform loads all `.tf` files in a directory regardless of name, following this convention makes projects easier to navigate.
+</quiz>
+
+<quiz>
+What does `terraform plan` do?
+
+- [ ] Applies all pending changes to infrastructure
+- [ ] Initializes the workspace and downloads plugins
+- [x] Shows a preview of what changes Terraform will make without applying them
+- [ ] Validates that the configuration syntax is correct
+
+---
+
+`terraform plan` creates an execution plan showing what actions Terraform would take to reach the desired state. It does not make any actual changes — it's a dry run.
 </quiz>
 
 <quiz>
 Which of the following are stored in the Terraform state file? (Select all that apply)
 
-- [x] Resource IDs from the cloud provider
-- [x] Resource attributes like IP addresses and ARNs
-- [ ] Your provider authentication credentials
+- [x] Resource IDs and metadata from the cloud provider
+- [x] Mappings between resource addresses and real infrastructure
+- [ ] Your `.tf` source code
 - [x] Dependency relationships between resources
-- [ ] The full text of your `.tf` configuration files
+- [ ] Provider plugin binaries
 
 ---
 
-The state file stores resource metadata including cloud provider IDs, computed attributes, and dependency information. It does **not** store credentials or your source configuration files.
+The state file tracks resource metadata, real-world IDs, dependency info, and attribute values. It does not contain source code or provider binaries.
 </quiz>
 
 <quiz>
-What is the correct order of a typical Terraform workflow?
+What is the unique identifier for a resource in Terraform configuration?
 
-- [ ] plan → init → validate → apply
-- [x] init → validate → plan → apply
-- [ ] validate → init → apply → plan
-- [ ] init → apply → plan → validate
+- [ ] Just the resource name (e.g., `my_instance`)
+- [ ] Just the resource type (e.g., `aws_instance`)
+- [x] The combination of resource type and name (e.g., `aws_instance.my_instance`)
+- [ ] The provider name plus the resource name
 
 ---
 
-The standard workflow is: `init` (set up workspace) → `validate` (check syntax) → `plan` (preview changes) → `apply` (execute changes). You must always initialize before any other operations.
+A resource's address is `resource_type.resource_name`, for example `aws_instance.my_instance`. This combination must be unique within a module.
 </quiz>
 
 <quiz>
-A `data` block in Terraform is used to:
-
-- [ ] Define a new infrastructure resource to create
-- [x] Query existing resources or external information without managing them
-- [ ] Store sensitive values like passwords
-- [ ] Define reusable configuration templates
+You can pass a variable value at the command line during `terraform plan` using the [[`-var`]] flag.
 
 ---
 
-Data sources (`data` blocks) let you fetch information about existing infrastructure that Terraform doesn't manage, or query provider APIs for information like AMI IDs or availability zones. Unlike `resource` blocks, they don't create or manage anything.
+The `-var` flag lets you set variable values on the command line, e.g. `terraform plan -var="instance_type=t2.micro"`. You can also use `-var-file` to load from a file.
 </quiz>
 
 <quiz>
-The file conventionally used to define input variables in a Terraform project is called [[variables.tf]].
+What does Terraform use providers for?
+
+- [ ] To store the state file remotely
+- [ ] To format and validate configuration files
+- [x] To interact with cloud platforms and other APIs by translating resource definitions into API calls
+- [ ] To manage Terraform module dependencies
 
 ---
 
-By convention, input variable declarations go in `variables.tf`, though Terraform loads all `.tf` files in a directory regardless of name. Following this convention makes projects easier to navigate.
+Providers are plugins that let Terraform interact with specific platforms (AWS, Azure, GCP, etc.). Each provider offers resource types and data sources for its platform.
 </quiz>
 
 <quiz>
-What does `terraform destroy` do?
+Which of the following statements about Terraform are true? (Select all that apply)
 
-- [ ] Deletes the state file
-- [ ] Removes the `.terraform` directory
-- [x] Destroys all resources managed by the current Terraform state
-- [ ] Reverts the last `terraform apply`
+- [x] Terraform uses a declarative language — you describe the desired end state
+- [ ] Terraform executes changes imperatively in the order you write them
+- [x] Terraform can manage infrastructure across multiple cloud providers
+- [x] Terraform tracks infrastructure with a state file
+- [ ] Terraform directly SSHs into servers to configure them
 
 ---
 
-`terraform destroy` terminates and removes all infrastructure resources tracked in the state file. It's the inverse of `terraform apply` — it plans the destruction of every managed resource and prompts for confirmation.
+Terraform is declarative (you describe *what* you want, not *how*), supports multiple providers, and uses a state file. It does not SSH into servers — that's configuration management tools like Ansible.
 </quiz>
 
 <quiz>
-Which of the following are benefits of Infrastructure as Code with Terraform? (Select all that apply)
+What happens if you run `terraform apply` without running `terraform init` first?
 
-- [x] Infrastructure changes are versioned and reviewable in source control
-- [x] Configuration can be reused across environments
-- [ ] Terraform automatically fixes misconfigured resources at runtime
-- [x] Infrastructure can be reproduced consistently
-- [ ] Terraform replaces the need for cloud provider APIs entirely
+- [ ] Terraform automatically runs init for you
+- [ ] Terraform applies using cached providers from a previous run
+- [x] Terraform fails with an error because the workspace is not initialized
+- [ ] Terraform creates resources but skips provider validation
 
 ---
 
-IaC with Terraform provides version control, reusability, and reproducibility. However, Terraform does not monitor or auto-fix resources at runtime (it's declarative, not a control plane), and it works *through* cloud provider APIs, not as a replacement for them.
+`terraform init` must be run before any other command. Without it, Terraform has no provider plugins downloaded and no backend configured, so `apply` will fail.
 </quiz>
 
 <quiz>
-You reference an attribute of a resource with address `aws_instance.web`. To get its public IP, you would write `[[aws_instance.web.public_ip]]`.
+A reusable collection of Terraform resources that can be called from other configurations is known as a [[module]].
 
 ---
 
-Resource attributes are accessed using the pattern `<resource_type>.<resource_name>.<attribute>`. For an AWS instance, `public_ip` is a computed attribute available after the resource is created.
+Modules are self-contained packages of Terraform configuration that can be reused across projects. You reference them with `module` blocks and access their outputs with `module.<name>.<output>`.
 </quiz>
 
 <quiz>
-What is a Terraform provider?
+Where should provider configuration blocks conventionally be placed?
 
-- [ ] A cloud account where resources are deployed
-- [ ] A Terraform module published to the registry
-- [x] A plugin that enables Terraform to interact with a specific platform or service API
-- [ ] A file that stores Terraform state remotely
+- [x] In `main.tf` (or `terraform.tf` for the required_providers block)
+- [ ] In `providers.tf` only — never in main.tf
+- [ ] In `variables.tf` alongside variable declarations
+- [ ] In a separate `config/` subdirectory
 
 ---
 
-Providers are plugins that teach Terraform how to talk to specific APIs — AWS, Azure, GCP, GitHub, Kubernetes, etc. Each provider offers resource types and data sources for its platform. They're downloaded during `terraform init`.
+By convention, provider blocks go in `main.tf` and the `required_providers` block goes inside the `terraform` block in `terraform.tf`. While Terraform doesn't enforce filenames, this is the standard practice.
 </quiz>
 
 <quiz>
-What flag can you pass to `terraform plan` to supply a variable value from the command line?
+What is the purpose of `terraform validate`?
 
-- [ ] `--set`
-- [x] `-var`
-- [ ] `--variable`
-- [ ] `-input`
+- [ ] It checks that your cloud credentials are valid
+- [ ] It verifies that the state file matches real infrastructure
+- [x] It checks configuration files for syntax errors and internal consistency
+- [ ] It runs a plan and confirms the changes are safe
 
 ---
 
-The `-var` flag lets you set individual variable values on the command line, e.g., `terraform plan -var="region=us-west-2"`. You can also use `-var-file` to load variables from a file.
+`terraform validate` checks your `.tf` files for syntax correctness and internal consistency (e.g., correct attribute names, valid references). It does not contact any remote APIs or validate credentials.
 </quiz>
 
 <quiz>
-Which of the following should typically be added to `.gitignore` in a Terraform project? (Select all that apply)
+Which of the following are common reasons to use `terraform destroy`? (Select all that apply)
 
-- [x] `*.tfstate`
-- [x] `.terraform/`
-- [ ] `*.tf`
-- [x] `*.tfstate.backup`
-- [ ] `variables.tf`
+- [x] Tearing down a development or testing environment
+- [x] Removing all resources managed by a configuration before decommissioning
+- [ ] Rolling back a failed apply to the previous state
+- [ ] Refreshing the state file to match real infrastructure
 
 ---
 
-State files (`*.tfstate`, `*.tfstate.backup`) contain sensitive data and should not be committed. The `.terraform/` directory contains downloaded providers and modules (like `node_modules/`). Your `.tf` configuration files **should** be committed — they are your source of truth.
+`terraform destroy` removes all resources managed by the configuration. It's commonly used for temporary environments. It does not "roll back" changes (use state manipulation or revert code for that) and `terraform refresh` handles state syncing.
 </quiz>
 
 <quiz>
-What is a Terraform module?
+How do you access an attribute of a resource named `aws_instance.web` in another part of your configuration?
 
-- [ ] A single `.tf` file
-- [ ] A Terraform provider for a specific cloud
-- [x] A reusable, self-contained package of Terraform configuration
-- [ ] A way to run Terraform in CI/CD pipelines
+- [ ] `resource.aws_instance.web.public_ip`
+- [x] `aws_instance.web.public_ip`
+- [ ] `ref.aws_instance.web.public_ip`
+- [ ] `get(aws_instance.web, "public_ip")`
 
 ---
 
-A module is a container for multiple resources that are used together. Any directory with `.tf` files is technically a module (the "root module"). Modules can be sourced from local paths, the Terraform Registry, or Git repositories, and are referenced with `module.<name>`.
+You reference resource attributes directly using `resource_type.resource_name.attribute`, e.g. `aws_instance.web.public_ip`. No `resource.` prefix or function call is needed.
 </quiz>
 
 <quiz>
-Terraform uses a [[declarative]] language model, meaning you describe the desired end state rather than the steps to reach it.
+The command to list all resources currently tracked in your Terraform state is `terraform` [[state list]].
 
 ---
 
-Terraform's HCL (HashiCorp Configuration Language) is declarative: you specify *what* your infrastructure should look like, and Terraform figures out *how* to get there. This contrasts with imperative approaches where you write step-by-step instructions.
+`terraform state list` displays all resource addresses in the current state file. It's useful for inspecting what Terraform is managing without looking at the raw state JSON.
 </quiz>
 
 <quiz>
-What does `terraform validate` check?
+What best describes Terraform's relationship with runtime infrastructure control?
 
-- [x] Whether the configuration files are syntactically valid and internally consistent
-- [ ] Whether the cloud credentials are correct
-- [ ] Whether the planned changes are safe to apply
-- [ ] Whether the state file matches actual infrastructure
-
----
-
-`terraform validate` checks your configuration for syntax errors, invalid references, and type mismatches — all without accessing any remote services or state. It does not verify credentials or check for drift.
-</quiz>
-
-<quiz>
-You want to view the current resources tracked in your Terraform state. Which command lists them?
-
-- [ ] `terraform show --list`
-- [ ] `terraform resources`
-- [x] `terraform state list`
-- [ ] `terraform status`
+- [ ] Terraform excels at both provisioning and runtime orchestration
+- [x] Terraform is excellent at bring-up but not suited for runtime orchestration
+- [ ] Terraform can dynamically scale resources in real time based on load
+- [ ] Terraform replaces the need for any control plane tooling
 
 ---
 
-`terraform state list` outputs all resource addresses currently tracked in the state file. For detailed information about a specific resource, you can use `terraform state show <address>` or `terraform show` for the full state.
-</quiz>
-
-<quiz>
-By convention, provider configuration and primary infrastructure definitions belong in which file?
-
-- [ ] `terraform.tf` only
-- [ ] `providers.tf` only
-- [x] Provider config in `terraform.tf`, primary infrastructure in `main.tf`
-- [ ] Everything in a single `config.tf`
-
----
-
-The conventional file layout puts Terraform settings and required providers in `terraform.tf`, primary resource and provider blocks in `main.tf`, variables in `variables.tf`, and outputs in `outputs.tf`. Terraform loads all `.tf` files, but following conventions improves readability.
+Terraform's model is "desired end state, not live control." It's excellent for provisioning and managing infrastructure configuration, but runtime orchestration (scaling, failover, service mesh routing) belongs to control-plane tools like Kubernetes, auto-scaling groups, or service meshes.
 </quiz>
